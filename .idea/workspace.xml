@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cca232a0-331d-4e43-8e0b-4d6c57ec7fbb" name="Default Changelist" comment="done" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/prathapSEDT/PageObjectModel_Allure_Reporting" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1amswpJlJyCFGFTbuhNwqvfSsIe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RunManager" selected="TestNG.D:/PageObjectModel_Allure_Reporting/testng.xml">
+    <configuration name="D:/PageObjectModel_Allure_Reporting/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Prathap_POM_TESTNG_MAVEN" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tc_01_RegisterNewUser.Tc_01_RegisterNewUser" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Prathap_POM_TESTNG_MAVEN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.testcases" />
+      <option name="MAIN_CLASS_NAME" value="com.testcases.Tc_01_RegisterNewUser" />
+      <option name="METHOD_NAME" value="Tc_01_RegisterNewUser" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tc_02_ValidateShoppingCart.Tc_02_ValidateShoppingCart" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Prathap_POM_TESTNG_MAVEN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.testcases" />
+      <option name="MAIN_CLASS_NAME" value="com.testcases.Tc_02_ValidateShoppingCart" />
+      <option name="METHOD_NAME" value="Tc_02_ValidateShoppingCart" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tc_03_LoginPage.Tc_03_LoginPage (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Prathap_POM_TESTNG_MAVEN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.testcases" />
+      <option name="MAIN_CLASS_NAME" value="com.testcases.Tc_03_LoginPage" />
+      <option name="METHOD_NAME" value="Tc_03_LoginPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tc_03_LoginPage.Tc_03_LoginPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Prathap_POM_TESTNG_MAVEN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.testcases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.testcases" />
+      <option name="MAIN_CLASS_NAME" value="com.testcases.Tc_03_LoginPage" />
+      <option name="METHOD_NAME" value="Tc_03_LoginPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.D:/PageObjectModel_Allure_Reporting/testng.xml" />
+        <item itemvalue="TestNG.Tc_02_ValidateShoppingCart.Tc_02_ValidateShoppingCart" />
+        <item itemvalue="TestNG.Tc_01_RegisterNewUser.Tc_01_RegisterNewUser" />
+        <item itemvalue="TestNG.Tc_03_LoginPage.Tc_03_LoginPage" />
+        <item itemvalue="TestNG.Tc_03_LoginPage.Tc_03_LoginPage (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cca232a0-331d-4e43-8e0b-4d6c57ec7fbb" name="Default Changelist" comment="" />
+      <created>1587352344909</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587352344909</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="done" />
+    <option name="LAST_COMMIT_MESSAGE" value="done" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598588896011">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598588896011" />
+    <state x="463" y="105" key="FileChooserDialogImpl" timestamp="1599193590094">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599193590094" />
+    <state width="1323" height="400" key="GridCell.Tab.0.bottom" timestamp="1599193618336">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="400" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1599193618336" />
+    <state width="1323" height="400" key="GridCell.Tab.0.center" timestamp="1599193618336">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="400" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1599193618336" />
+    <state width="1323" height="400" key="GridCell.Tab.0.left" timestamp="1599193618336">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="400" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1599193618336" />
+    <state width="1323" height="400" key="GridCell.Tab.0.right" timestamp="1599193618336">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="400" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1599193618336" />
+    <state width="1323" height="430" key="GridCell.Tab.1.bottom" timestamp="1598627046938">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="430" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598627046938" />
+    <state width="1323" height="430" key="GridCell.Tab.1.center" timestamp="1598627046938">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="430" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1598627046938" />
+    <state width="1323" height="430" key="GridCell.Tab.1.left" timestamp="1598627046938">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="430" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1598627046938" />
+    <state width="1323" height="430" key="GridCell.Tab.1.right" timestamp="1598627046938">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="430" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1598627046938" />
+    <state width="600" height="279" key="javadoc.popup" timestamp="1598626155428">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="600" height="279" key="javadoc.popup/0.0.1366.728@0.0.1366.728" timestamp="1598626155428" />
+  </component>
+</project>

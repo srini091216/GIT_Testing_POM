@@ -1,0 +1,824 @@
+Index: src/test/java/com/applicationobjects/HomePageOR.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.applicationobjects;\r\n\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.support.FindBy;\r\n\r\npublic class HomePageOR {\r\n\r\n    @FindBy(xpath = \"//a[text()='Register']\")\r\n   public WebElement lnk_Register;\r\n\r\n    @FindBy(xpath = \"//a[text()='Log in']\")\r\n   public  WebElement lnk_Login;\r\n\r\n    @FindBy(xpath = \"//span[text()='Wishlist']/parent::a\")\r\n   public WebElement lnk_WishList;\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/applicationobjects/HomePageOR.java	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ src/test/java/com/applicationobjects/HomePageOR.java	(date 1587559436938)
+@@ -3,6 +3,8 @@
+ import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.support.FindBy;
+ 
++import java.util.List;
++
+ public class HomePageOR {
+ 
+     @FindBy(xpath = "//a[text()='Register']")
+@@ -14,5 +16,59 @@
+     @FindBy(xpath = "//span[text()='Wishlist']/parent::a")
+    public WebElement lnk_WishList;
+ 
++    @FindBy(xpath = "(//a[normalize-space(text())='Computers'])[1]")
++    public WebElement lnk_Computers;
++
++    @FindBy(xpath = "(//a[normalize-space(text())='Desktops'])[4]")
++    public WebElement lnk_Desktops;
++
++    @FindBy(xpath = "(//a[normalize-space(text())='Lenovo IdeaCentre 600 All-in-One PC'])")
++    public WebElement lnk_Desktops_product;
++
++    @FindBy(xpath = "//input[@id='add-to-cart-button-3']")
++    public WebElement lnk_Desktops_product_add;
++
++    @FindBy(xpath = "(//a[normalize-space(text())='Electronics'])[1]")
++    public WebElement lnk_Electronics;
++
++    @FindBy(xpath = "(//a[normalize-space(text())='Cell phones'])[4]")
++    public WebElement lnk_Cell_phones;
++
++    @FindBy(xpath = "(//a[normalize-space(text())='HTC One Mini Blue'])[2]")
++    public WebElement lnk_Cell_phones_product;
++
++
++    @FindBy(xpath = "/html/body/div[6]/div[3]/div[2]/div[2]/div/div[2]/div[3]/div/div[1]/div/div[2]/div[3]/div[2]/input[1]")
++    public WebElement lnk_Cell_phones_product_add;
++
++ @FindBy(xpath = "(//a[normalize-space(text())='Apparel'])[1]")
++ public WebElement lnk_Apparel;
++
++ @FindBy(xpath = "(//a[normalize-space(text())='Shoes'])[4]")
++ public WebElement lnk_Apparel_shoes;
++
++ @FindBy(xpath = "//a[text()='Nike Floral Roshe Customized Running Shoes']")
++ public WebElement lnk_Apparel_shoes_products;
++
++
++ @FindBy(xpath = "//select[@name='product_attribute_6']")
++ public WebElement products_drp_size;
++
++ @FindBy(xpath = "//select[@name='product_attribute_7']")
++ public WebElement products_drp_color;
++
++ @FindBy(xpath = "//input[@id='product_attribute_8_19']")
++ public WebElement products_select_print;
++
++ @FindBy(xpath = "//input[@id='add-to-cart-button-24']")
++ public WebElement products_shoe_add;
++
++ @FindBy(xpath = "//a[@class='ico-cart']")
++ public WebElement lnk_shoppingCart;
++
++
++
++
++
+ 
+ }
+Index: src/test/java/com/testcases/Tc_04_ShoppingCart_To_OrderConfirm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/testcases/Tc_04_ShoppingCart_To_OrderConfirm.java	(date 1598792457950)
++++ src/test/java/com/testcases/Tc_04_ShoppingCart_To_OrderConfirm.java	(date 1598792457950)
+@@ -0,0 +1,29 @@
++package com.testcases;
++
++import com.applicationpages.HomePage;
++import com.applicationpages.ShoppingCart;
++import com.genericmethods.GenericMethods;
++import io.qameta.allure.Description;
++import io.qameta.allure.Severity;
++import io.qameta.allure.SeverityLevel;
++import org.testng.annotations.Test;
++
++public class Tc_04_ShoppingCart_To_OrderConfirm extends GenericMethods {
++
++    @Test
++    @Severity(SeverityLevel.CRITICAL)
++    @Description("Validate Login page functionality")
++
++    public void Tc_04_ShoppingCart_To_OrderConfirm() {
++        //launchBrowser();
++        HomePage homePage = HomePage.getInstance();
++        homePage.navigate_To_shoppingCart_Page();
++
++        ShoppingCart shoppingCart= ShoppingCart.getInstance();
++        shoppingCart.fillOrderDetails();
++        shoppingCart.getScreenshot();
++
++
++    }
++
++}
+Index: src/test/java/com/applicationobjects/RegistrationPage_OR.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.applicationobjects;\r\n\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.support.FindBy;\r\n\r\npublic class RegistrationPage_OR {\r\n\r\n    @FindBy(xpath = \"//input[@id='gender-male']\")\r\n    public WebElement rdo_Gender_Male;\r\n    @FindBy(xpath = \"//input[@id='gender-female']\")\r\n    public WebElement rdo_Gender_FeMale;\r\n    @FindBy(xpath = \"//input[@id='FirstName']\")\r\n    public WebElement edi_FirstName;\r\n    @FindBy(xpath = \"//input[@id='LastName']\")\r\n    public WebElement edi_LastName;\r\n    @FindBy(xpath = \"//select[@name='DateOfBirthDay']\")\r\n    public WebElement drp_Day;\r\n    @FindBy(xpath = \"//select[@name='DateOfBirthMonth']\")\r\n    public WebElement drp_Month;\r\n    @FindBy(xpath = \"//select[@name='DateOfBirthYear']\")\r\n    public WebElement drp_Year;\r\n    @FindBy(xpath = \"//input[@name='Email']\")\r\n    public WebElement edi_Email;\r\n    @FindBy(xpath = \"//input[@name='Password']\")\r\n    public WebElement edi_Password;\r\n    @FindBy(xpath = \"//input[@name='ConfirmPassword']\")\r\n    public WebElement edi_CnfPassword;\r\n    @FindBy(xpath = \"//input[@name='register-button']\")\r\n    public WebElement btn_Register;\r\n    @FindBy(xpath = \"//div[text()='Your registration completed']\")\r\n    public WebElement txt_SuccessfullRegister;\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/applicationobjects/RegistrationPage_OR.java	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ src/test/java/com/applicationobjects/RegistrationPage_OR.java	(date 1587481674563)
+@@ -29,5 +29,7 @@
+     public WebElement btn_Register;
+     @FindBy(xpath = "//div[text()='Your registration completed']")
+     public WebElement txt_SuccessfullRegister;
++    @FindBy(xpath = "//*[@class='ico-logout']")
++    public WebElement lnk_Logout;
+ 
+ }
+Index: Testdata/TestData.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"TestData\": [\r\n    {\r\n      \"TestCaseName\": \"Tc_01_RegisterNewUser\",\r\n      \"iteration\": \"1\",\r\n      \"Gender\": \"Male\",\r\n      \"FirstName\": \"user\",\r\n      \"LastName\": \"lname\",\r\n      \"Day\": \"9\",\r\n      \"Month\":\"July\",\r\n      \"Year\": \"1990\",\r\n      \"Email\":\"abc@gmail.com\",\r\n      \"Password\": \"pass1234\",\r\n      \"ConfirmPassword\": \"pass1234\"\r\n    },\r\n    {\r\n      \"TestCaseName\": \"Tc_01_RegisterNewUser\",\r\n      \"iteration\": \"2\",\r\n      \"Gender\": \"Female\",\r\n      \"FirstName\": \"user\",\r\n      \"LastName\": \"lname\",\r\n      \"Day\": \"10\",\r\n      \"Month\":\"August\",\r\n      \"Year\": \"1991\",\r\n      \"Email\":\"abc@gmail.com\",\r\n      \"Password\": \"pass1234\",\r\n      \"ConfirmPassword\": \"pass1234\"\r\n    }\r\n\r\n\r\n\r\n\r\n  ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Testdata/TestData.json	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ Testdata/TestData.json	(date 1598703457715)
+@@ -10,8 +10,8 @@
+       "Month":"July",
+       "Year": "1990",
+       "Email":"abc@gmail.com",
+-      "Password": "pass1234",
+-      "ConfirmPassword": "pass1234"
++      "Password": "pass12345",
++      "ConfirmPassword": "pass12345"
+     },
+     {
+       "TestCaseName": "Tc_01_RegisterNewUser",
+Index: testng.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE suite SYSTEM \"http://testng.org/testng-1.0.dtd\">\r\n\r\n\r\n<suite name=\"Suite\">\r\n    <!--    <listeners>-->\r\n\r\n    <!--        <listener class-name=\"com.GenericFunctions.TestNGListeners\"></listener>-->\r\n\r\n    <!--    </listeners>-->\r\n\r\n    <test  name=\"Test\">\r\n\r\n        <classes>\r\n\r\n            <!--   <class name=\"com.TestCases.Tc_01_ValidateLoginCredentials\"></class>-->\r\n            <class name=\"com.testcases.Tc_01_RegisterNewUser\"></class>\r\n        </classes>\r\n\r\n    </test> <!-- Test -->\r\n</suite> <!-- Suite -->
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- testng.xml	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ testng.xml	(date 1598792433055)
+@@ -15,7 +15,11 @@
+ 
+             <!--   <class name="com.TestCases.Tc_01_ValidateLoginCredentials"></class>-->
+             <class name="com.testcases.Tc_01_RegisterNewUser"></class>
++           <class name="com.testcases.Tc_02_ValidateShoppingCart"></class>
++            <class name="com.testcases.Tc_03_LoginPage"></class>
++            <class name="com.testcases.Tc_04_ShoppingCart_To_OrderConfirm"></class>
+         </classes>
+ 
++
+     </test> <!-- Test -->
+ </suite> <!-- Suite -->
+\ No newline at end of file
+Index: src/test/java/com/applicationpages/ShoppingCart.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/applicationpages/ShoppingCart.java	(date 1598793264867)
++++ src/test/java/com/applicationpages/ShoppingCart.java	(date 1598793264867)
+@@ -0,0 +1,86 @@
++package com.applicationpages;
++
++import com.applicationobjects.RegistrationPage_OR;
++import com.applicationobjects.ShoppingCartOR;
++import com.genericmethods.GenericMethods;
++import io.qameta.allure.Step;
++import org.openqa.selenium.support.PageFactory;
++import org.testng.asserts.SoftAssert;
++
++public class ShoppingCart extends GenericMethods {
++
++    SoftAssert asrt = new SoftAssert();
++
++    private static ShoppingCartOR shoppingcartor;
++
++    private static ShoppingCart shoppingcart;
++
++    public ShoppingCart() {
++        System.out.println(" Creating Object for ShoppingCart");
++
++    }
++
++    public static ShoppingCart getInstance() {
++        if (shoppingcart == null) {
++            shoppingcart = new ShoppingCart();
++            shoppingcartor = PageFactory.initElements(driver, ShoppingCartOR.class);
++        }
++        return shoppingcart;
++    }
++
++    //*********************** APPLICATION BEHAVIOUR*************************
++    @Step("Fill order details")
++    public void fillOrderDetails() {
++        boolean status;
++
++        status = clickElement("ShoppingCart", "Confirm check box", shoppingcartor.cb_agree);
++        asrt.assertEquals(status, true, "Unable to click check box");
++        getScreenshot();
++
++        status = clickElement("ShoppingCart","Continue button", shoppingcartor.btn_checkout);
++        asrt.assertEquals(status, true, "Unable to click on button");
++
++        status = selectDropDownByText("ShoppingCart","Country", shoppingcartor.drp_country,"India");
++        asrt.assertEquals(status, true, "Unable to select data for the field country");
++
++        status = sendData("ShoppingCart", "City_name", shoppingcartor.edi_city,"Hyderabad");
++        asrt.assertEquals(status, true, "Unable to enter data for the field city name");
++
++        status = sendData("ShoppingCart","Address1",shoppingcartor.edi_address1,"Hyderabad");
++        asrt.assertEquals(status, true, "Unable to enter data for the field address1");
++
++        status = sendData("ShoppingCart","Address2",shoppingcartor.edi_address2,"Hyderabad");
++        asrt.assertEquals(status, true, "Unable to enter data for the field address2");
++
++        status = sendData("ShoppingCart","Zipcode",shoppingcartor.edi_zipcode,"500001");
++        asrt.assertEquals(status, true, "Unable to enter data for the field Zipcode");
++
++        status = sendData("ShoppingCart","Phone number",shoppingcartor.edi_phonenuber,"9999999999");
++        asrt.assertEquals(status, true, "Unable to enter data for the field phone number");
++        getScreenshot();
++
++        status = clickElement("ShoppingCart","Continue to shipping method", shoppingcartor.btn_continue_to_shippingmethod);
++        asrt.assertEquals(status, true, "Unable to click on button for Continue to shipping method");
++        getScreenshot();
++
++        status = clickElement("ShoppingCart","ship Type", shoppingcartor.rdo_shiptype);
++        asrt.assertEquals(status, true, "Unable to click on Radio button for Continue to shipping type");
++        getScreenshot();
++
++        status = clickElement("ShoppingCart","Ship Type", shoppingcartor.btn_continue_to_paymentmethod);
++        asrt.assertEquals(status, true, "Unable to click on button for Continue to shipping payment method");
++        getScreenshot();
++
++        status = clickElement("ShoppingCart","Payment  Type", shoppingcartor.btn_continue_to_paymentinfo);
++        asrt.assertEquals(status, true, "Unable to click on button for Continue to shipping payment info");
++        getScreenshot();
++
++        status = clickElement("ShoppingCart","SPayment Info", shoppingcartor.btn_continue_to_orderconfirm);
++        asrt.assertEquals(status, true, "Unable to click on button for Continue to shipping order confirm");
++        getScreenshot();
++
++        status = clickElement("ShoppingCart","Order confirm", shoppingcartor.btn_confirm);
++        asrt.assertEquals(status, true, "Unable to click on button for Continue to shipping payment method");
++        getScreenshot();
++    }
++}
+Index: src/test/java/com/testcases/Tc_02_ValidateShoppingCart.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/testcases/Tc_02_ValidateShoppingCart.java	(date 1598793009492)
++++ src/test/java/com/testcases/Tc_02_ValidateShoppingCart.java	(date 1598793009492)
+@@ -0,0 +1,29 @@
++package com.testcases;
++
++import com.applicationpages.HomePage;
++import com.applicationpages.RegistrationPage;
++import com.genericmethods.GenericMethods;
++import io.qameta.allure.Description;
++import io.qameta.allure.Severity;
++import io.qameta.allure.SeverityLevel;
++import org.testng.annotations.Test;
++
++public class Tc_02_ValidateShoppingCart extends GenericMethods {
++
++    @Test
++    @Severity(SeverityLevel.CRITICAL)
++    @Description("Validate shoping cart functionality")
++    public void Tc_02_ValidateShoppingCart() {
++        //launchBrowser();
++        HomePage homePage = HomePage.getInstance();
++       homePage.navigate_To_Computers_Page();
++
++       homePage.navigate_To_Electronics_Page();
++
++        //homePage.navigate_To_Apparel_Page();
++
++        //homePage.navigate_To_shoppingCart_Page();
++       // homePage.Validate_ShoppingCart_Data();
++
++    }
++}
+Index: src/test/java/com/applicationobjects/ShoppingCartOR.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/applicationobjects/ShoppingCartOR.java	(date 1598780064896)
++++ src/test/java/com/applicationobjects/ShoppingCartOR.java	(date 1598780064896)
+@@ -0,0 +1,55 @@
++package com.applicationobjects;
++
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++
++public class ShoppingCartOR {
++    //@FindBy(xpath="//*[@class='cart-label']")
++    //public WebElement lnk_ShoppingCart;
++
++    @FindBy(xpath="//input[@id='termsofservice']")
++    public WebElement cb_agree;
++
++    @FindBy(xpath="//button[@id='checkout']")
++    public WebElement btn_checkout;
++
++    @FindBy(xpath="//select[@id='BillingNewAddress_CountryId']")
++    public WebElement drp_country;
++
++    @FindBy(xpath="//input[@id='BillingNewAddress_City']")
++    public WebElement edi_city;
++
++    @FindBy(xpath="//input[@id='BillingNewAddress_Address1']")
++    public WebElement edi_address1;
++
++    @FindBy(xpath="//input[@id='BillingNewAddress_Address2']")
++    public WebElement edi_address2;
++
++    @FindBy(xpath="//input[@id='BillingNewAddress_ZipPostalCode']")
++    public WebElement edi_zipcode;
++
++    @FindBy(xpath="//input[@id='BillingNewAddress_PhoneNumber']")
++    public WebElement edi_phonenuber;
++
++    @FindBy(xpath="//*[@onclick='Billing.save()']")
++    public WebElement btn_continue_to_shippingmethod;
++
++    @FindBy(xpath="//input[@id='shippingoption_1']")
++    public WebElement rdo_shiptype;
++
++    @FindBy(xpath="//*[@onclick='ShippingMethod.save()']")
++    public WebElement btn_continue_to_paymentmethod;
++
++    @FindBy(xpath="//*[@onclick='PaymentMethod.save()']")
++    public WebElement btn_continue_to_paymentinfo;
++
++    @FindBy(xpath="//*[@onclick='PaymentInfo.save()']")
++    public WebElement btn_continue_to_orderconfirm;
++
++    @FindBy(xpath="//*[@onclick='ConfirmOrder.save()']")
++    public WebElement btn_confirm;
++
++
++
++
++}
+Index: src/test/java/com/testcases/Tc_03_LoginPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/testcases/Tc_03_LoginPage.java	(date 1598704428456)
++++ src/test/java/com/testcases/Tc_03_LoginPage.java	(date 1598704428456)
+@@ -0,0 +1,30 @@
++package com.testcases;
++
++import com.applicationpages.HomePage;
++import com.applicationpages.LoginPage;
++import com.applicationpages.RegistrationPage;
++import com.genericmethods.GenericMethods;
++import io.qameta.allure.Description;
++import io.qameta.allure.Severity;
++import io.qameta.allure.SeverityLevel;
++import org.testng.annotations.Test;
++
++public class Tc_03_LoginPage extends GenericMethods {
++    @Test
++    @Severity(SeverityLevel.CRITICAL)
++    @Description("Validate Login page functionality")
++
++    public void Tc_03_LoginPage() {
++        //launchBrowser();
++        //System.out.println("Browser Launched");
++        HomePage homePage = HomePage.getInstance();
++        //System.out.println("Object initialized to homepage");
++        homePage.Navigating_To_Login_Page();
++        //System.out.println("Navigated to login page");
++        LoginPage login_page =LoginPage.getInstance();
++        //System.out.println("Object initialized to Login  page");
++        login_page.Enterlogindetails();
++        //System.out.println("Entering login details");
++
++    }
++}
+Index: src/test/java/com/testcases/Tc_01_RegisterNewUser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.testcases;\r\n\r\nimport com.applicationpages.HomePage;\r\nimport com.applicationpages.RegistrationPage;\r\nimport com.genericmethods.GenericMethods;\r\nimport io.qameta.allure.Description;\r\nimport io.qameta.allure.Severity;\r\nimport io.qameta.allure.SeverityLevel;\r\nimport org.testng.annotations.Test;\r\n\r\npublic class Tc_01_RegisterNewUser extends GenericMethods {\r\n    @Test\r\n    @Severity(SeverityLevel.CRITICAL)\r\n    @Description(\"Registration of new user\")\r\n    public void Tc_01_RegisterNewUser(){\r\n        launchBrowser();\r\n        HomePage homePage=HomePage.getInstance();\r\n        homePage.navigate_To_Regsiter_Page();\r\n\r\n        RegistrationPage registrationPage=RegistrationPage.getInstance();\r\n        registrationPage.fillRegistartionForm();\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/testcases/Tc_01_RegisterNewUser.java	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ src/test/java/com/testcases/Tc_01_RegisterNewUser.java	(date 1598589417940)
+@@ -20,6 +20,10 @@
+         RegistrationPage registrationPage=RegistrationPage.getInstance();
+         registrationPage.fillRegistartionForm();
+ 
++        registrationPage.Logout_page();
++
++
++
+ 
+     }
+ }
+Index: src/test/java/com/applicationpages/LoginPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/applicationpages/LoginPage.java	(date 1598703457548)
++++ src/test/java/com/applicationpages/LoginPage.java	(date 1598703457548)
+@@ -0,0 +1,62 @@
++package com.applicationpages;
++
++import com.applicationobjects.LoginPageOR;
++import com.applicationobjects.RegistrationPage_OR;
++import com.genericmethods.GenericMethods;
++import io.qameta.allure.Step;
++import org.openqa.selenium.support.PageFactory;
++import org.testng.asserts.SoftAssert;
++
++
++public class LoginPage extends GenericMethods {
++
++    SoftAssert asrt = new SoftAssert();
++
++    private static LoginPageOR loginPageor;
++    private static LoginPage loginpage;
++    //private static RegistrationPage registrationPage;
++    //RegistrationPage registrationPage=new RegistrationPage();
++
++      private LoginPage() {
++        System.out.println(" Creating Object for Login Page");
++
++    }
++
++    public static LoginPage getInstance() {
++        if (loginpage == null) {
++            loginpage = new LoginPage();
++            loginPageor = PageFactory.initElements(driver, LoginPageOR.class);
++            //registrationPage=new RegistrationPage();
++             }
++        return loginpage;
++    }
++
++
++
++    boolean status;
++    @Step("Enter Login details")
++    public void Enterlogindetails(){
++
++
++
++        System.out.println("User Name :"+RegistrationPage.getInstance().Email);
++        System.out.println("Password :"+RegistrationPage.getInstance().Password);
++
++        status = sendData("Login", "username", loginPageor.User_mail_id,RegistrationPage.getInstance().Email);
++        asrt.assertEquals(status, true, "Unable to enter data for the field User name");
++        getScreenshot();
++
++        status = sendData("Login", "password", loginPageor.User_Password, RegistrationPage.getInstance().Password);
++        asrt.assertEquals(status, true, "Unable to enter data for the field password");
++        getScreenshot();
++
++        status = clickElement("Login", "Login_button" , loginPageor.User_login_button);
++        asrt.assertEquals(status, true, "Unable to enter click the button");
++        getScreenshot();
++
++    }
++
++
++
++
++}
+Index: src/test/java/com/annoatations/Annotations.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.annoatations;\r\n\r\nimport com.genericmethods.GenericMethods;\r\nimport com.getconfigdetails.ReadConfigDeatils;\r\nimport com.readtestdata.ReadJsonData;\r\nimport org.testng.annotations.AfterSuite;\r\nimport org.testng.annotations.BeforeMethod;\r\nimport org.testng.annotations.BeforeSuite;\r\n\r\nimport java.lang.reflect.Method;\r\n\r\npublic class Annotations extends ReadJsonData{\r\n\r\n    @BeforeSuite\r\n    public void beforeSuite(){\r\n        ReadConfigDeatils readConfigDeatils=new ReadConfigDeatils();\r\n        readConfigDeatils.loadProperties();\r\n\r\n        ReadJsonData readJsonData=new ReadJsonData();\r\n        readJsonData.loadJsonFile();\r\n    }\r\n    @BeforeMethod\r\n    public void beforeMethod(Method m){\r\n        testCase=m.getName().toString();\r\n    }\r\n\r\n    @AfterSuite\r\n    public void afterSuite()\r\n    {\r\n        GenericMethods.driver.close();\r\n        GenericMethods.driver.quit();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/annoatations/Annotations.java	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ src/test/java/com/annoatations/Annotations.java	(date 1587448125103)
+@@ -27,7 +27,7 @@
+     @AfterSuite
+     public void afterSuite()
+     {
+-        GenericMethods.driver.close();
+-        GenericMethods.driver.quit();
++       // GenericMethods.driver.close();
++        //GenericMethods.driver.quit();
+     }
+ }
+Index: src/test/java/com/applicationobjects/LoginPageOR.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/applicationobjects/LoginPageOR.java	(date 1598595934739)
++++ src/test/java/com/applicationobjects/LoginPageOR.java	(date 1598595934739)
+@@ -0,0 +1,18 @@
++package com.applicationobjects;
++
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++
++public class LoginPageOR {
++
++    @FindBy(xpath="//input[@id='Email']")
++    public WebElement User_mail_id;
++
++    @FindBy(xpath="//input[@id='Password']")
++    public WebElement User_Password;
++
++    @FindBy(xpath="//*[@class='button-1 login-button']")
++    public WebElement User_login_button;
++
++
++}
+Index: src/test/java/com/applicationpages/RegistrationPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.applicationpages;\r\n\r\nimport com.applicationobjects.HomePageOR;\r\nimport com.applicationobjects.RegistrationPage_OR;\r\nimport com.genericmethods.GenericMethods;\r\nimport io.qameta.allure.Step;\r\nimport org.openqa.selenium.support.PageFactory;\r\nimport org.testng.asserts.SoftAssert;\r\n\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Date;\r\n\r\npublic class RegistrationPage extends GenericMethods {\r\n\r\n    SoftAssert asrt = new SoftAssert();\r\n\r\n    private static RegistrationPage_OR registrationPage_or;\r\n\r\n    private static RegistrationPage registrationPage;\r\n\r\n    private RegistrationPage() {\r\n        System.out.println(\" Creating Object for RegistrationPage\");\r\n\r\n    }\r\n\r\n    public static RegistrationPage getInstance() {\r\n        if (registrationPage == null) {\r\n            registrationPage = new RegistrationPage();\r\n            registrationPage_or = PageFactory.initElements(driver, RegistrationPage_OR.class);\r\n        }\r\n        return registrationPage;\r\n    }\r\n\r\n    //*********************** APPLICATION BEHAVIOUR*************************\r\n    @Step(\"Fill registartion form\")\r\n    public void fillRegistartionForm() {\r\n        String gender = getData(\"Gender\", 1);\r\n        String firstname = getData(\"FirstName\", 1);\r\n        String lastname = getData(\"LastName\", 1);\r\n        String day = getData(\"Day\", 1);\r\n        String month = getData(\"Month\", 1);\r\n        String year = getData(\"Year\", 1);\r\n        String email = getData(\"Email\", 1);\r\n        String[] arr=email.split(\"@\");\r\n        //abc@gnail.com\r\n        SimpleDateFormat sdf=new SimpleDateFormat(\"HHmmSSSS\");\r\n        Date d=new Date();\r\n        email=arr[0]+ sdf.format(d).toString()+\"@\"+arr[1];\r\n\r\n\r\n        String password = getData(\"Password\", 1);\r\n        String cnfpassword = getData(\"ConfirmPassword\", 1);\r\n        boolean status;\r\n        if (gender.toLowerCase().equals(\"male\")) {\r\n            status = clickElement(\"Registration\", \"Gender Male\", registrationPage_or.rdo_Gender_Male);\r\n            asrt.assertEquals(status, true, \"Unable to click gender as male\");\r\n        } else {\r\n            status = clickElement(\"Registration\", \"Gender Male\", registrationPage_or.rdo_Gender_FeMale);\r\n            asrt.assertEquals(status, true, \"Unable to click gender as female\");\r\n        }\r\n\r\n        //Send data to first name\r\n        status = sendData(\"Registration\", \"First Name\", registrationPage_or.edi_FirstName, firstname);\r\n        asrt.assertEquals(status, true, \"Unable to enter data for the field first name\");\r\n//Send data to last name\r\n        status = sendData(\"Registration\", \"First Name\", registrationPage_or.edi_LastName, lastname);\r\n        asrt.assertEquals(status, true, \"Unable to enter data for the field last name\");\r\n//select day\r\n        status = selectDropDownByText(\"Registration\", \"Day\", registrationPage_or.drp_Day, day);\r\n        asrt.assertEquals(status, true, \"Unable to select dropdown Day\");\r\n\r\n        status = selectDropDownByText(\"Registration\", \"Month\", registrationPage_or.drp_Month, month);\r\n        asrt.assertEquals(status, true, \"Unable to select dropdown Month\");\r\n\r\n        status = selectDropDownByText(\"Registration\", \"Year\", registrationPage_or.drp_Year, year);\r\n        asrt.assertEquals(status, true, \"Unable to select dropdown Year\");\r\n\r\n        status = sendData(\"Registration\", \"Email\", registrationPage_or.edi_Email, email);\r\n        asrt.assertEquals(status, true, \"Unable to enter data for the field Email\");\r\n\r\n        status = sendData(\"Registration\", \"Password\", registrationPage_or.edi_Password, password);\r\n        asrt.assertEquals(status, true, \"Unable to enter data for the field password\");\r\n\r\n        status = sendData(\"Registration\", \"Confirm Password\", registrationPage_or.edi_CnfPassword, cnfpassword);\r\n        asrt.assertEquals(status, true, \"Unable to enter data for the field Confirm Password\");\r\n        getScreenshot();\r\n        clickElement(\"Registration\",\"Register\",registrationPage_or.btn_Register);\r\n\r\n        elementDisplayed(\"Registration\",\"Successfull Message\",registrationPage_or.txt_SuccessfullRegister,35);\r\n        getScreenshot();\r\n        asrt.assertAll();\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/applicationpages/RegistrationPage.java	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ src/test/java/com/applicationpages/RegistrationPage.java	(date 1598702926748)
+@@ -10,7 +10,11 @@
+ import java.text.SimpleDateFormat;
+ import java.util.Date;
+ 
++
++
+ public class RegistrationPage extends GenericMethods {
++    public String Email;
++    public String Password;
+ 
+     SoftAssert asrt = new SoftAssert();
+ 
+@@ -18,7 +22,7 @@
+ 
+     private static RegistrationPage registrationPage;
+ 
+-    private RegistrationPage() {
++    public RegistrationPage() {
+         System.out.println(" Creating Object for RegistrationPage");
+ 
+     }
+@@ -34,6 +38,7 @@
+     //*********************** APPLICATION BEHAVIOUR*************************
+     @Step("Fill registartion form")
+     public void fillRegistartionForm() {
++
+         String gender = getData("Gender", 1);
+         String firstname = getData("FirstName", 1);
+         String lastname = getData("LastName", 1);
+@@ -48,6 +53,8 @@
+         email=arr[0]+ sdf.format(d).toString()+"@"+arr[1];
+ 
+ 
++
++
+         String password = getData("Password", 1);
+         String cnfpassword = getData("ConfirmPassword", 1);
+         boolean status;
+@@ -77,9 +84,13 @@
+ 
+         status = sendData("Registration", "Email", registrationPage_or.edi_Email, email);
+         asrt.assertEquals(status, true, "Unable to enter data for the field Email");
++        Email= email;
++        System.out.println("Email id:" +Email);
+ 
+         status = sendData("Registration", "Password", registrationPage_or.edi_Password, password);
+         asrt.assertEquals(status, true, "Unable to enter data for the field password");
++        Password = password;
++        System.out.println("Password :"+Password);
+ 
+         status = sendData("Registration", "Confirm Password", registrationPage_or.edi_CnfPassword, cnfpassword);
+         asrt.assertEquals(status, true, "Unable to enter data for the field Confirm Password");
+@@ -90,6 +101,13 @@
+         getScreenshot();
+         asrt.assertAll();
+ 
++
++
++    }
++    @Step("Perform logout action")
++    public void Logout_page(){
++        Boolean status = clickElement("LogoutPage","Logout", registrationPage_or.lnk_Logout);
++        getScreenshot();
+     }
+ 
+ 
+Index: src/test/java/com/genericmethods/GenericMethods.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.genericmethods;\r\n\r\nimport com.annoatations.Annotations;\r\nimport com.getconfigdetails.ReadConfigDeatils;\r\nimport io.github.bonigarcia.wdm.WebDriverManager;\r\nimport io.qameta.allure.Attachment;\r\nimport io.qameta.allure.Step;\r\nimport org.omg.CORBA.TIMEOUT;\r\nimport org.openqa.selenium.OutputType;\r\nimport org.openqa.selenium.TakesScreenshot;\r\nimport org.openqa.selenium.WebDriver;\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.chrome.ChromeDriver;\r\nimport org.openqa.selenium.firefox.FirefoxDriver;\r\nimport org.openqa.selenium.interactions.Actions;\r\nimport org.openqa.selenium.support.ui.*;\r\n\r\nimport java.time.Duration;\r\nimport java.util.NoSuchElementException;\r\nimport java.util.concurrent.TimeUnit;\r\n\r\nimport static java.util.concurrent.TimeUnit.SECONDS;\r\n\r\npublic class GenericMethods extends Annotations {\r\n\r\n    public static WebDriver driver;\r\n\r\n    /**\r\n\r\n     * @return boolean\r\n     * @discription This method is used to launch the browser specified by the user\r\n     */\r\n    @Step(\"Launching the browser\")\r\n    public boolean launchBrowser(){\r\n        boolean status=true;\r\n        ReadConfigDeatils property=new ReadConfigDeatils();\r\n        try\r\n        {\r\n            switch (property.getProperty(\"BROWSER\").toLowerCase())\r\n            {\r\n                case \"chrome\":\r\n                    WebDriverManager.chromedriver().setup();\r\n                    driver=new ChromeDriver();\r\n                    break;\r\n                case \"firefox\":\r\n                    WebDriverManager.firefoxdriver().setup();\r\n                    driver=new FirefoxDriver();\r\n                    break;\r\n\r\n            }\r\n            //maximize the browser\r\n            driver.manage().window().maximize();\r\n            driver.get(property.getProperty(property.getProperty(\"EXECUTE_ENVIRONMENT\")+\"_APP_URL\"));\r\n            driver.manage().timeouts().implicitlyWait(10, SECONDS);\r\n            getScreenshot();\r\n\r\n        }catch(Exception e)\r\n        {\r\n            status=false;\r\n        }\r\n        return status;\r\n\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param pageName\r\n     * @param elementName\r\n     * @param element\r\n     * @return boolean\r\n     */\r\n    @Step(\"Click the element {1} on the page {0}\")\r\n    public boolean clickElement(String pageName, String elementName, WebElement element){\r\n        boolean status=true;\r\n        try{\r\n            Actions acc=new Actions(driver);\r\n            acc.moveToElement(element).click(element).build().perform();\r\n\r\n        }catch(Exception e){\r\n            status=false;\r\n        }\r\n        return status;\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param pageName\r\n     * @param elementName\r\n     * @param element\r\n     * @return\r\n     */\r\n    @Step(\"Enter the data for the element {1} on the page {0}\")\r\n    public boolean sendData(String pageName, String elementName, WebElement element,String data){\r\n        boolean status=true;\r\n        try{\r\n            Actions acc=new Actions(driver);\r\n            acc.moveToElement(element).click(element).build().perform();\r\n            element.clear();\r\n            element.sendKeys(data);\r\n        }catch(Exception e){\r\n            status=false;\r\n        }\r\n        return status;\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param pageName\r\n     * @param elementName\r\n     * @param element\r\n     * @param data\r\n     * @return\r\n     */\r\n    @Step(\"Select the dropdown {1} with the value{3} on the page {0}\")\r\n    public boolean selectDropDownByText(String pageName, String elementName, WebElement element,String data){\r\n        boolean status=true;\r\n        try{\r\n            Select select=new Select(element);\r\n            select.selectByVisibleText(data);\r\n        }catch(Exception e){\r\n            status=false;\r\n        }\r\n        return status;\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param pageName\r\n     * @param elementName\r\n     * @param element\r\n     * @param data\r\n     * @return\r\n     */\r\n    @Step(\"Select the dropdown {1} with the value{3} on the page {0}\")\r\n    public boolean selectDropDownByValue(String pageName, String elementName, WebElement element,String data){\r\n        boolean status=true;\r\n        try{\r\n            Select select=new Select(element);\r\n            select.selectByValue(data);\r\n        }catch(Exception e){\r\n            status=false;\r\n        }\r\n        return status;\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param pageName\r\n     * @param elementName\r\n     * @param element\r\n     * @param data\r\n     * @return\r\n     */\r\n    @Step(\"Select the dropdown {1} with the value{3} on the page {0}\")\r\n    public boolean selectDropDownByIndex(String pageName, String elementName, WebElement element,int data){\r\n        boolean status=true;\r\n        try{\r\n            Select select=new Select(element);\r\n            select.selectByIndex(data);\r\n        }catch(Exception e){\r\n            status=false;\r\n        }\r\n        return status;\r\n    }\r\n\r\n    public boolean waitForEementToBeClickable(String pageName, String elementName,WebElement element,int sec){\r\n        boolean status=true;\r\n        try{\r\n            WebDriverWait wait=new WebDriverWait(driver,sec);\r\n            wait.until(ExpectedConditions.elementToBeClickable(element));\r\n\r\n        }catch(Exception e){\r\n            System.out.println(e.getMessage());\r\n        }\r\n        return status;\r\n    }\r\n\r\n    public boolean waitForElementToDisplay(String pageName, String elementName,WebElement element,int sec){\r\n        boolean status=true;\r\n        try{\r\n            WebDriverWait wait=new WebDriverWait(driver,sec);\r\n            wait.until(ExpectedConditions.visibilityOf(element));\r\n\r\n        }catch(Exception e){\r\n            System.out.println(e.getMessage());\r\n        }\r\n        return status;\r\n    }\r\n\r\n    @Step(\"Verify the Element {1} is displayed on the page {0}\")\r\n    public boolean elementDisplayed(String pageName, String elementName,WebElement element,int sec){\r\n        boolean status=true;\r\n        try{\r\n           waitForElementToDisplay(pageName,elementName,element,sec);\r\n           if(element.isDisplayed())\r\n           {\r\n               System.out.println(\"Element is Displayed on the page\");\r\n           }else {\r\n               System.out.println(\"Element is not Displayed on the page\");\r\n                          }\r\n\r\n        }catch(Exception e){\r\n            System.out.println(e.getMessage());\r\n        }\r\n        return status;\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n    @Attachment(value = \"Page screenshot\", type = \"image/png\")\r\n    public byte[] getScreenshot() {\r\n        TakesScreenshot sht=(TakesScreenshot)driver;\r\n        return sht.getScreenshotAs(OutputType.BYTES);\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/genericmethods/GenericMethods.java	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ src/test/java/com/genericmethods/GenericMethods.java	(date 1587352541542)
+@@ -5,7 +5,6 @@
+ import io.github.bonigarcia.wdm.WebDriverManager;
+ import io.qameta.allure.Attachment;
+ import io.qameta.allure.Step;
+-import org.omg.CORBA.TIMEOUT;
+ import org.openqa.selenium.OutputType;
+ import org.openqa.selenium.TakesScreenshot;
+ import org.openqa.selenium.WebDriver;
+Index: src/test/java/com/applicationpages/HomePage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.applicationpages;\r\n\r\nimport com.applicationobjects.HomePageOR;\r\nimport com.genericmethods.GenericMethods;\r\nimport io.qameta.allure.Step;\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.support.PageFactory;\r\nimport org.testng.Assert;\r\n\r\npublic class HomePage extends GenericMethods {\r\n\r\n    private static HomePageOR homePageOR;\r\n\r\n    private static HomePage homePage;\r\n\r\n    private HomePage(){\r\n        System.out.println(\" Creating Object for Homepage\");\r\n\r\n    }\r\n    public static HomePage getInstance(){\r\n        if (homePage==null){\r\n            homePage=new HomePage();\r\n            homePageOR= PageFactory.initElements(driver,HomePageOR.class);\r\n        }\r\n        return homePage;\r\n    }\r\n\r\n    // Write your application Behaviours\r\n\r\n    @Step(\"Navigate to Register Page\")\r\n    public void navigate_To_Regsiter_Page(){\r\n\r\n        boolean status=clickElement(\"Home\", \"Register\", homePageOR.lnk_Register);\r\n        if(status){\r\n            getScreenshot();\r\n        }else{\r\n            getScreenshot();\r\n            Assert.assertEquals(status,true,\"Verification for registration page navigation\");\r\n        }\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/applicationpages/HomePage.java	(revision 455194ef8c15ec5ac905defc3294a91da8902d85)
++++ src/test/java/com/applicationpages/HomePage.java	(date 1598793008887)
+@@ -3,24 +3,31 @@
+ import com.applicationobjects.HomePageOR;
+ import com.genericmethods.GenericMethods;
+ import io.qameta.allure.Step;
++import org.openqa.selenium.By;
+ import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.support.PageFactory;
+ import org.testng.Assert;
+ 
++import java.util.HashMap;
++import java.util.List;
++
++import static java.util.concurrent.TimeUnit.SECONDS;
++
+ public class HomePage extends GenericMethods {
+ 
+     private static HomePageOR homePageOR;
+ 
+     private static HomePage homePage;
+ 
+-    private HomePage(){
++    private HomePage() {
+         System.out.println(" Creating Object for Homepage");
+ 
+     }
+-    public static HomePage getInstance(){
+-        if (homePage==null){
+-            homePage=new HomePage();
+-            homePageOR= PageFactory.initElements(driver,HomePageOR.class);
++
++    public static HomePage getInstance() {
++        if (homePage == null) {
++            homePage = new HomePage();
++            homePageOR = PageFactory.initElements(driver, HomePageOR.class);
+         }
+         return homePage;
+     }
+@@ -28,22 +35,139 @@
+     // Write your application Behaviours
+ 
+     @Step("Navigate to Register Page")
+-    public void navigate_To_Regsiter_Page(){
++    public void navigate_To_Regsiter_Page() {
+ 
+-        boolean status=clickElement("Home", "Register", homePageOR.lnk_Register);
+-        if(status){
++        boolean status = clickElement("Home", "Register", homePageOR.lnk_Register);
++        if (status) {
+             getScreenshot();
+-        }else{
++        } else {
+             getScreenshot();
+-            Assert.assertEquals(status,true,"Verification for registration page navigation");
++            Assert.assertEquals(status, true, "Verification for registration page navigation");
+         }
+ 
+     }
+ 
++    @Step("Navigate to Computers Page from HomePage")
++    public void navigate_To_Computers_Page() {
++
++        boolean status = clickElement("Home", "Computers", homePageOR.lnk_Computers);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification for Computers page navigation");
++        status = clickElement("Home", "Computers", homePageOR.lnk_Desktops);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification for Desktops page navigation");
++        status = clickElement("Home", "Computers", homePageOR.lnk_Desktops_product);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification to click on product");
++
++        //map< String product> product_name = new HashMap<>();
++        // product.get((ln))
++
++        status = clickElement("Home", "Computers", homePageOR.lnk_Desktops_product_add);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification to add product on cart ");
++
++    }
++
++    @Step("Navigate to Electronics Page from HomePage")
++    public void navigate_To_Electronics_Page() {
++
++        boolean status = clickElement("Home", "Electronics", homePageOR.lnk_Electronics);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification for Electronics page navigation");
++
++        status = clickElement("Home", "Electronics", homePageOR.lnk_Cell_phones);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification for Cell phones page navigation");
++
++        status = clickElement("Home", "Electronics", homePageOR.lnk_Cell_phones_product_add);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification to add product on cart ");
++
++    }
++
++    @Step("Navigate to Apparel Page from HomePage")
++    public void navigate_To_Apparel_Page() {
++        boolean status = clickElement("Home", "Apparel", homePageOR.lnk_Apparel);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification for Apparel page navigation");
++
++        status = clickElement("Home", "Apparel", homePageOR.lnk_Apparel_shoes);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification for Apparel shoes  page navigation");
++
++        status = clickElement("Home", "Apparel", homePageOR.lnk_Apparel_shoes_products);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Verification for Apparel product  page navigation");
++
++
++        //  List<WebElement> shoe_products = homePageOR.lnk_Apparel_shoes_products;
++        // for(WebElement product:shoe_products) {
++
++        //   System.out.println(product.getText());
++        //}
++
++        status = selectDropDownByText("Home", "Apparel", homePageOR.products_drp_size, "8");
++        Assert.assertEquals(status, true, "Unable to select dropdown size");
++
++        status = selectDropDownByText("Home", "Apparel", homePageOR.products_drp_color, "White/Blue");
++        getScreenshot();
++        Assert.assertEquals(status, true, "Unable to select dropdown color");
++
++        status = clickElement("Home", "Apparel", homePageOR.products_select_print);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Unable to select print type");
++        driver.manage().timeouts().implicitlyWait(10, SECONDS);
++
++        status = clickElement("Home", "Apparel", homePageOR.products_shoe_add);
++        getScreenshot();
++        Assert.assertEquals(status, true, "Unable to add to Shopping cart");
++    }
++
++    @Step("Navigate to Shopping cart page from HomePage")
++    public void navigate_To_shoppingCart_Page() {
++
++       Boolean status = clickElement("Home", "ShoppingCart", homePageOR.lnk_shoppingCart);
++        getScreenshot();
++       //Assert.assertEquals(status, "true", "Unable to navigate  to shoppingCart");
++    }
++
++    @Step("Validating the Shopping cart data")
++    public void Validate_ShoppingCart_Data() {
+ 
++        String rowsXpath = "//*[text()='Remove']/ancestor::table/tbody/tr[1]";
++        List<WebElement> rows = driver.findElements(By.xpath("rowsXpath"));
+ 
++        for (int r = 1; r <= rows.size(); r++) {
++            String colsXpath = rowsXpath + "[" + r + "]/td";
+ 
++            List<WebElement> cols = driver.findElements(By.xpath(colsXpath));
+ 
++            for (int c = 1; c <= cols.size(); c++) {
++                colsXpath = colsXpath + "[" + c + "]";
+ 
++                System.out.println(driver.findElement(By.xpath(colsXpath)).getText());
++
++            }
++
++        }
++    }
++    @Step("Navigate to Login page from HomePage")
++    public void Navigating_To_Login_Page() {
++
++        Boolean status = clickElement("Home", "Login", homePageOR.lnk_Login);
++        getScreenshot();
++    }
+ 
+ }
++
++
++
++
++
++
++
++
++
++
++
